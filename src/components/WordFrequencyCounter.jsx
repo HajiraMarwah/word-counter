@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./WordFrequencyCounter.css";
 
 export default function WordFrequencyCounter() {
   const [wordCounts, setWordCounts] = useState([]);
@@ -33,26 +34,19 @@ export default function WordFrequencyCounter() {
   };
 
   return (
-    <div style={{display:"flex",justifyContent:"center"}}>
-      <div className="flex flex-col items-center justify-center p-6 bg-white shadow-lg rounded-xl w-full max-w-lg text-center">
-        <h2 className="text-xl font-bold mb-3">Word Frequency Counter</h2>
+    <div className="container">
+      <div className="card">
+        <h2 className="title">Word Frequency Counter</h2>
         <textarea
           data-testid="textarea"
-          className="w-full p-2 border rounded-md mb-4 text-center"
+          className="textarea"
           rows="6"
           placeholder="Type or paste text here..."
           onChange={handleTextChange}
         />
-        <ul
-          data-testid="result-list"
-          className="space-y-1 w-full flex flex-col items-center"
-        >
+        <ul data-testid="result-list" className="result-list">
           {wordCounts.map(([word, count]) => (
-            <li
-              key={word}
-              data-testid={`word-${word}`}
-              className="text-center"
-            >
+            <li key={word} data-testid={`word-${word}`} className="result-item">
               {word} count: {count}
             </li>
           ))}
