@@ -1,4 +1,5 @@
-import WordFrequencyCounter from "./WordFrequencyCounter";
+import WordFrequencyCounter from "./components/WordFrequencyCounter";
+
 
 function App() {
   return (
